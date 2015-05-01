@@ -11,37 +11,10 @@ I recommend you to get a speed class 10 SD Card with more then 4 GB capacity for
 Additionally you should buy a small heatsink. [Something like that](http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=raspberry%20pi%20heatsink&sprefix=raspberry+pi+he%2Caps&rh=i%3Aaps%2Ck%3Araspberry%20pi%20heatsink).
 
 
+## 1. Prepare your SD
 
-## 1. Setup the SD card
-### 1.1. Download the image from the website
-
-There are 2 distributions of raspberry pi now. You may find the downloads on [www.archlinuxarm.org](http://www.archlinuxarm.org) for the latest version of archlinux on raspberry pi.
-
-```
-# For Raspberry Pi 2
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
-bsdtar -xpf ArchLinuxARM-rpi-2-latest.tar.gz -C root
-sync
-
-# For Raspberry Pi 1
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz
-bsdtar -xpf ArchLinuxARM-rpi-latest.tar.gz -C root
-sync
-```
-
-
-### 1.2. Write the image via dd onto the SDCard
-    sudo dd bs=1M if=ArchLinuxARM-2014.01-rpi.img of=/dev/sdb
-
-### 1.3. Resize the Partition via gparted
-If your SD card is larger than 2 GB, you will want to resize the partitions to make use of your entire card.
-
-The image creates two partitions, which will be available as /dev/mmcblk0p1 and /dev/mmcblk0p2 when you boot up your Raspberry Pi. The first partition (100 MB) is mounted to /boot, and the second (1.7 GB by default) is mounted to the root directory /. Leave the first partition as is, and expand the second to as large as you desire within the space available on your card.
-
-I recommend using gparted.
-
-### 1.4. Put the SD Card into your pi, power it on and login with root/root
-You should have connected a keyboard via usb and some kind of screen via hdmi.
+* For Raspberry Pi 1 follow [this](http://archlinuxarm.org/platforms/armv6/raspberry-pi) guide
+* For Raspberry Pi 2 follow [this](http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2) guide 
 
 
 ## 2. Basic system setup
